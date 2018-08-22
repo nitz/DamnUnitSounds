@@ -8,14 +8,14 @@ local Sounds = select(2, ...)
 function Sounds:PLAYER_FOCUS_CHANGED()
 	if( UnitExists("focus") ) then
 		if( UnitIsEnemy("focus", "player") ) then
-			PlaySound("igCreatureAggroSelect")
+			PlaySound(SOUNDKIT.IG_CREATURE_AGGRO_SELECT)
 		elseif( UnitIsFriend("player", "focus") ) then
-			PlaySound("igCharacterNPCSelect")
+			PlaySound(SOUNDKIT.IG_CHARACTER_NPC_SELECT)
 		else
-			PlaySound("igCreatureNeutralSelect")
+			PlaySound(SOUNDKIT.IG_CREATURE_NEUTRAL_SELECT)
 		end
 	else
-		PlaySound("INTERFACESOUND_LOSTTARGETUNIT")
+		PlaySound(SOUNDKIT.INTERFACE_SOUND_LOST_TARGET_UNIT)
 	end
 end
 
@@ -23,14 +23,14 @@ end
 function Sounds:PLAYER_TARGET_CHANGED()
 	if( UnitExists("target") ) then
 		if( UnitIsEnemy("target", "player") ) then
-			PlaySound("igCreatureAggroSelect")
+			PlaySound(SOUNDKIT.IG_CREATURE_AGGRO_SELECT)
 		elseif( UnitIsFriend("player", "target") ) then
-			PlaySound("igCharacterNPCSelect")
+			PlaySound(SOUNDKIT.IG_CHARACTER_NPC_SELECT)
 		else
-			PlaySound("igCreatureNeutralSelect")
+			PlaySound(SOUNDKIT.IG_CREATURE_NEUTRAL_SELECT)
 		end
 	else
-		PlaySound("INTERFACESOUND_LOSTTARGETUNIT")
+		PlaySound(SOUNDKIT.INTERFACE_SOUND_LOST_TARGET_UNIT)
 	end
 end
 
@@ -42,7 +42,7 @@ function Sounds:UNIT_FACTION(unit, ...)
 	if( UnitIsPVPFreeForAll("player") or UnitIsPVP("player") ) then
 		if( not announcedPVP ) then
 			announcedPVP = true
-			PlaySound("igPVPUpdate")
+			PlaySound(SOUNDKIT.IG_PVP_UPDATE)
 		end
 	else
 		announcedPVP = nil

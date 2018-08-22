@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 80000
 ## Title: Damn Unit Sounds
 ## Notes: Adds default UI sounds back in that custom unit frames disable
 ## Author: Shadowed
